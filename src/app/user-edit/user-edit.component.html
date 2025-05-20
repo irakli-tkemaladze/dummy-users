@@ -1,0 +1,52 @@
+<div (click)="inFormClick($event)" class="edit-container">
+  <div class="top-container">
+    <span>ახალი მომხმარებლის დამატება</span>
+    <button (click)="onCancel()">X</button>
+  </div>
+  <form action="">
+    <div class="email">
+      <label for="email">ელ.ფოსტა</label>
+      <input
+        [(ngModel)]="enteredInputData.email"
+        type="email"
+        name="email"
+        id="email"
+        [ngClass]="!formValidation.isEmailValid ? 'valid' : ''"
+        (focus)="formValidation.isEmailValid = true"
+      />
+    </div>
+    <div class="form-group">
+      <aside aria-label="userName" class="left">
+        <label for="userName">მომხმარებლის სახელი</label>
+        <input
+          [(ngModel)]="enteredInputData.firstName"
+          type="text"
+          name="userName"
+          id="userName"
+          [ngClass]="!formValidation.isNameValid ? 'valid' : ''"
+          (focus)="formValidation.isNameValid = true"
+        />
+      </aside>
+      <aside aria-label="lastName" class="right">
+        <label for="lastName">მომხმარებლის გვარი</label>
+        <input
+          [ngClass]="!formValidation.isLastNameValid ? 'valid' : ''"
+          [(ngModel)]="enteredInputData.lastName"
+          type="text"
+          name="lastName"
+          id="lastName"
+          (focus)="formValidation.isLastNameValid = true"
+        />
+      </aside>
+    </div>
+    <div class="btn-area">
+      <button type="button" (click)="onCancel()" class="btn-cancel">
+        <span> გაუქმება </span>
+      </button>
+      <button (click)="onBtnAddClick()" type="submit" class="btn-add">
+        <span> დამატება </span>
+      </button>
+    </div>
+  </form>
+</div>
+<section (click)="onCancel()"></section>

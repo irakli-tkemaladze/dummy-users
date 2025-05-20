@@ -1,0 +1,123 @@
+:host {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  padding-top: 85px;
+  display: flex;
+  justify-content: center;
+}
+section {
+  background-color: #000000;
+  z-index: 1;
+  opacity: 30%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+}
+.edit-container {
+  position: fixed;
+  width: 678px !important;
+  height: 403px;
+  border-radius: 22px;
+  background-color: #ffffff;
+  z-index: 5;
+  padding: 30px;
+  .top-container {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 21px;
+    border-bottom: 1px solid #efeff4;
+    span {
+      font-size: 16px;
+      line-height: 100%;
+      letter-spacing: -2%;
+      font-weight: bolder;
+    }
+    button {
+      width: 14px;
+      height: 14px;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      font-weight: bolder;
+    }
+  }
+  form {
+    margin-top: 20px;
+    input:focus {
+      outline: none;
+      border: 2px solid #2b7cd366;
+    }
+    .email {
+      display: flex;
+      width: 100%;
+      height: 62px;
+      position: relative;
+      margin: 13px 20px 0 0;
+    }
+    label {
+      position: absolute;
+      top: 13px;
+      left: 20px;
+      font-size: 10px;
+      line-height: 100%;
+      letter-spacing: -3%;
+      opacity: 40%;
+    }
+    input {
+      border: 2px solid #e6e4e2;
+      border-radius: 12px;
+      padding: 13px 20px 0 20px;
+      width: 100%;
+      height: 62px;
+      font-weight: bolder;
+      color: #1a1512;
+    }
+    .form-group {
+      display: flex;
+      gap: 18px;
+      margin: 13px 20px 0 0;
+      width: 100%;
+      aside {
+        position: relative;
+        width: 100%;
+      }
+    }
+    .btn-area {
+      padding-top: 102px;
+      display: flex;
+      gap: 18px;
+      button {
+        width: 100%;
+        height: 42px;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+        span {
+          font-size: 12px;
+          line-height: 100%;
+          letter-spacing: -2%;
+        }
+      }
+      .btn-cancel {
+        background-color: #00000015;
+        span {
+          color: #000000;
+          font-weight: bolder;
+        }
+      }
+      .btn-add {
+        background-color: #2b7cd3;
+        span {
+          color: #ffffff;
+          font-weight: bolder;
+        }
+      }
+    }
+    .valid {
+      background-color: rgba(255, 0, 0, 0.155);
+    }
+  }
+}

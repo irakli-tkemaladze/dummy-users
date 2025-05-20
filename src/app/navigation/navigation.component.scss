@@ -1,0 +1,48 @@
+a {
+  padding: 16px 0;
+  display: flex;
+  text-decoration: none;
+  gap: 20px;
+  align-items: center;
+  cursor: pointer;
+  .active-marker {
+    width: 6px;
+    height: 34px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+  .title {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    .cube {
+      width: 24px;
+      height: 24px;
+      background-color: #d9d9d9;
+    }
+    span {
+      color: #1a1512;
+      font-size: 12px;
+      font-weight: 500;
+      opacity: 50%;
+    }
+  }
+}
+a:hover {
+  span {
+    color: #1a1512 !important;
+    opacity: 100% !important;
+  }
+}
+.active {
+  .active-marker {
+    background-color: #c73734;
+  }
+  .cube {
+    background-color: #1a1512 !important;
+  }
+  span {
+    color: #1a1512 !important;
+    opacity: 100% !important;
+  }
+}

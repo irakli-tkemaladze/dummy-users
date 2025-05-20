@@ -1,0 +1,92 @@
+<section class="users-data">
+  <div class="customer-search">
+    <h3>მომხმარებელი</h3>
+    <form action="">
+      <input
+        ngModel
+        name="search"
+        #search="ngModel"
+        type="search"
+        placeholder="მოძებნეთ მომხმარებელი"
+      />
+      <button (click)="onUserSearchClick(search)">
+        <img src="icons/Vector.png" alt="" />
+      </button>
+    </form>
+  </div>
+  <div class="customer-edit">
+    <button (click)="onUserChange()" class="btn">რედაქტირება</button>
+    <div>
+      <button><img src="icons/btnIcon.png" alt="" /></button>
+      <button><img src="icons/btnDownload.png" alt="" /></button>
+    </div>
+  </div>
+  @if(+pg()===0){
+  <p>მომხმარებელი მსგავსი მონაცემით არ არსებობს</p>
+  }
+  <div class="all-customers">
+    @for(user of users; track user.id){
+    <div
+      (dblclick)="onUserDblClicked(user)"
+      (click)="markUser(user)"
+      class="customer"
+      [ngClass]="user.id === markedUser()?.id ? 'active' : ''"
+    >
+      <div class="customer-data">
+        <div class="customer-initials">
+          <h4>{{ user.firstName[0] }}.{{ user.lastName[0] }}</h4>
+        </div>
+        <div class="customer-inf">
+          <h5>{{ user.firstName }} {{ user.lastName }}</h5>
+          <span>{{ user.email }}</span>
+        </div>
+      </div>
+      <div class="customer-status">
+        <p>ყველაზე დიდი მომხმარებელი</p>
+      </div>
+    </div>
+    }
+    <div class="pages">
+      <span class="view-users-length-and-total"
+        >ნაჩვენებია {{ users.length }} შედეგი- {{ totalUsers }} შედეგიდან</span
+      >
+      <div class="pages-area">
+        @if(allPages.length > 1 && +pg()<=allPages.length && currentPage !== 1){
+
+        <button (click)="onPageChange(currentPage - 1)"><</button>
+        } @if(allPages.length>0 && +pg()<=allPages.length){
+
+        <button
+          (click)="onPageChange(1)"
+          [ngClass]="{ activePage: currentPage === 1 }"
+        >
+          1
+        </button>
+        } @if(currentPage >3 && +pg()<=allPages.length){
+        <span>...</span>
+        } @for(page of uiPages;track $index){
+        <button
+          [ngClass]="{ activePage: currentPage === page }"
+          (click)="onPageChange(page)"
+        >
+          {{ page }}
+        </button>
+        } @if(currentPage < allPages.length-2 && +pg()<=allPages.length){
+        <span>...</span>
+        } @if(allPages.length >1 && +pg()<=allPages.length){
+        <button
+          [ngClass]="{
+            activePage: currentPage === allPages[allPages.length - 1]
+          }"
+          (click)="onPageChange(allPages[allPages.length - 1])"
+        >
+          {{ allPages[allPages.length - 1] }}
+        </button>
+        @if(currentPage !== allPages.length){
+
+        <button (click)="onPageChange(currentPage + 1)">></button>
+        } }
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,14 @@
+@for(navigation of navigations;track navigation.title){
+<a
+  [routerLink]="[navigation.routerLink]"
+  [queryParams]="navigation.params"
+  (click)="onNavigationChange()"
+  routerLinkActive="active"
+>
+  <div class="active-marker"></div>
+  <div class="title">
+    <div class="cube"></div>
+    <span>{{ navigation.title }}</span>
+  </div>
+</a>
+}

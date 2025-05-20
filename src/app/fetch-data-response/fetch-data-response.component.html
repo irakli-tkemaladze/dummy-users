@@ -1,0 +1,14 @@
+<section (click)="onCancelPopup()"></section>
+<div (click)="inClickPopup($event)" class="wrapper">
+  <div class="top-container">
+    <span>მომხმარებლის რედაქტირება</span>
+    <button (click)="onCancelPopup()">X</button>
+  </div>
+  <div class="cycle" [ngClass]="isError() ? 'err' : 'comp'">
+    <img src="icons/{{ icon() }}" alt="" />
+  </div>
+  <p>{{ text() }}</p>
+  <div class="btn-area">
+    <button (click)="onCancelPopup()"><span>დახურვა</span></button>
+  </div>
+</div>

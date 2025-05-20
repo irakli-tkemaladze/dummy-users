@@ -1,0 +1,62 @@
+main {
+
+  display: flex;
+  .navigation {
+    padding: 40px 5px 0 0;
+    border-right: 1px solid #efeff4;
+    min-height: 100vh;
+    min-width: 301px;
+    img {
+      width: 38px;
+      height: 34.54px;
+      margin: 50px 48px;
+      cursor: pointer;
+    }
+  }
+  .body {
+    width: 100%;
+    .customer {
+      display: flex;
+      justify-content: space-between;
+      padding: 22px;
+      background-color: #f9f9fb;
+      height: 86px;
+
+      button {
+        color: #373535;
+        width: 172px;
+        height: 42px;
+        padding: 10px;
+        border: none;
+        border-radius: 8px;
+        background-color: #d9d9d9;
+        cursor: pointer;
+        font-weight: bolder;
+      }
+      .customer-info {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        .customer-name {
+          span {
+            font-size: 14px;
+            line-height: 21px;
+            letter-spacing: -2%;
+            color: grey;
+          }
+          h4 {
+            font-size: 14px;
+            color: #1a1512;
+            line-height: 21px;
+            letter-spacing: -2%;
+          }
+        }
+        .cube {
+          height: 42px;
+          width: 42px;
+          background-color: #d9d9d9;
+        }
+      }
+    }
+  }
+}

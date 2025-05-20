@@ -1,0 +1,33 @@
+<div class="wrapper">
+  <div class="user-info">
+    <button class="back-customers" (click)="onBackToUserClick()">
+      <span>
+        <img src="icons/Vector-left.png" alt="" />
+        <h3>მომხმარებლები</h3>
+      </span>
+    </button>
+  </div>
+  <div class="customer-initials">
+    <h4>
+      {{ (currentUser?.firstName)![0] }}.{{ (currentUser?.lastName)![0] }}
+    </h4>
+  </div>
+  <div class="user-info-wrapper">
+    <div class="user-inf">
+      <span>მომხმარებლის სახელი</span>
+      <h3>{{ currentUser?.firstName }}</h3>
+    </div>
+    <div class="user-inf">
+      <span>მომხმარებლის გვარი</span>
+      <h3>{{ currentUser?.lastName }}</h3>
+    </div>
+    <div class="user-inf">
+      <span>ელ ფოსტა</span>
+      <h3>{{ currentUser?.email }}</h3>
+    </div>
+    <div class="user-inf">
+      <span>მომხმარებლის ჯგუფი</span>
+      <h3>ყველაზე დიდი მომხმარებლის ჯგუფი</h3>
+    </div>
+  </div>
+</div>
